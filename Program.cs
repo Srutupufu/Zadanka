@@ -173,16 +173,19 @@ namespace Zadania_GPT
                         bool userSaidYOrN = false;
                         do
                         {
-                            string? userWantsToAddMoreNumbers = Console.ReadLine();
+                            string? userWantsToAddMoreNumbers = Console.ReadLine()?.ToUpper();
+
                             if (userWantsToAddMoreNumbers == "Y" || userWantsToAddMoreNumbers == "N")
                             {
                                 if (userWantsToAddMoreNumbers == "Y")
                                 {
                                     Console.WriteLine("W takim razie podaj kolejną liczbę:");
+                                    userSaidYOrN = true;
                                 }
                                 else if (userWantsToAddMoreNumbers == "N")
                                 {
                                     Console.WriteLine("Teraz twoje liczby zostaną dodane");
+                                    userSaidYOrN = true;
                                     userWantsToStop = true;
                                     break;
                                 }
